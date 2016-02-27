@@ -15,11 +15,17 @@ class MenuController
 		puts "4 - Import entries from a CSV"
 		puts "5 - View entry number n"
 		puts "6 - Exit"
+		puts "0 - Detonate"
 		print "Enter your selection: "
 
 		selection = gets.to_i
 		
 		case selection
+		when 0
+			system "clear"
+			address_book.detonate
+			puts "All entries deleted"
+			main_menu
 		when 1
 			system "clear"
 			view_all_entries
